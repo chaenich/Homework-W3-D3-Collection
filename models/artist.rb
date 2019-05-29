@@ -29,7 +29,7 @@ class Artist
         WHERE artist_id = $1"
     values = [@id]
     album_hashes = SqlRunner.run(sql, values)
-    albums = album_hashes.map { |album_hash| Artist.new(album_hash)}
+    albums = album_hashes.map { |album_hash| Album.new(album_hash)}
     return albums
   end
 
